@@ -23,7 +23,7 @@
       align-items: center;
       justify-content: center;
     }
-    #item {
+    .items {
       width: 200px;
       height: 400px;
       background-color: #19559c;
@@ -31,10 +31,6 @@
       animation: shining 5s linear 2s infinite;
       margin: 0 auto;
       border: solid white 10px;
-
-      /* animation-name: shining; */
-
-      /* next */
     }
     @keyframes shining {
       0% {
@@ -47,58 +43,50 @@
       100% {
       }
     }
-    #item::after {
+    .items::after {
       content: "";
       position: absolute;
       width: 20px;
       height: 20px;
 
       background: radial-gradient(white, transparent);
-      /* box-shadow: 0 0 0 100px radial-gradient(red, transparent); */
+
       animation: test 5s linear infinite;
       filter: blur(4px);
     }
     @keyframes test {
       0% {
         transform: translateX(0px) translateY(0px);
-
-        /* transform: rotateZ(-360deg); */
-        /* background: linear-gradient(90deg, white 0%, white 0%, #19559c 11%); */
-        /* border-top: solid white; */
       }
       25% {
         transform: translateX(180px) translateY(0px);
-
-        /* transform: rotateZ(-360deg); */
-        /* background: linear-gradient(90deg, white 0%, white 0%, #19559c 11%); */
       }
       50% {
-        /* transform: rotateZ(90deg); */
         transform: translateY(380px) translateX(180px);
-
-        /* background: linear-gradient(0deg, white 0%, white 0%, #19559c 11%); */
-        /* border-top: solid white;
-        border-left: solid white; */
       }
       75% {
-        /* background: linear-gradient(-90deg, white 0%, white 0%, #19559c 11%); */
-        /* border-left: solid white;
-        border-bottom: solid white; */
         transform: translateY(380px) translateX(0px);
       }
       100% {
         transform: translateY(0px) translateX(0);
-
-        /* background: linear-gradient(180deg, white 0%, white 0%, #19559c 11%); */
-        /* border-bottom: solid white;
-        border-right: solid white; */
       }
     }
   </style>
   <div id="container">
-    <div id="item"><div id="item--slide"></div></div>
+    <div id="item1" class="items"><div id="item--slide"></div></div>
+    <div id="item2" class="items"><div id="item--slide"></div></div>
+    <div id="item3" class="items"><div id="item--slide"></div></div>
+    <div id="item4" class="items"><div id="item--slide"></div></div>
+    <div id="item5" class="items"><div id="item--slide"></div></div>
   </div>
   <body>
-    <script></script>
+    <script>
+      let a, b, c, d, e;
+      data = [a, b, c, d, e];
+      const container = document.getElementById("container");
+      const items = document.getElementsByClassName("items");
+
+      console.log(items);
+    </script>
   </body>
 </html>
